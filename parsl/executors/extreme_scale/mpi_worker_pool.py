@@ -78,9 +78,9 @@ class Manager(object):
 
         # Creating larger queues to avoid queues blocking
         # These can be updated after queue limits are better understood
-        self.pending_task_queue = queue.Queue(maxsize=max_queue_size + 10 ^ 3)
-        self.pending_result_queue = queue.Queue(maxsize=10 ^ 4)
-        self.ready_worker_queue = queue.Queue(maxsize=max_queue_size + 10 ^ 3)
+        self.pending_task_queue = queue.Queue()
+        self.pending_result_queue = queue.Queue()
+        self.ready_worker_queue = queue.Queue()
 
         self.tasks_per_round = 1
 
